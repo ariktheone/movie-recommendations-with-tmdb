@@ -1,0 +1,147 @@
+/* Reset default styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container for centering content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+}
+
+/* Center the page title */
+h1, h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Center the form */
+form {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Style the input field */
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the submit button */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the movie recommendations section */
+#recommendations {
+    margin-top: 20px;
+}
+
+/* Style individual movie items */
+/* Style movie containers */
+.movie-container {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    vertical-align: top; /* Ensure all containers align at the top */
+    width: 200px; /* Set a fixed width for consistent layout */
+}
+
+/* Style movie poster images */
+.movie img {
+    width: 100%; /* Make images fill their containers */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style movie title */
+.movie-title {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+
+.movie-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 9999; /* Ensure the movie container is above other elements */
+}
+
+
+
+
+/* Enhance movie details */
+.movie-details {
+    display: none;
+    text-align: left;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0px; /* Position below the image */
+    width: 250px; /* Increased width for more content */
+    z-index: 9999; /* Ensure the details are above other elements */
+}
+
+/* Show movie details on hover */
+.movie-container:hover .movie-details {
+    display: block;
+}
+
+/* Style for the "Show More" link */
+.show-more-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.show-more-link:hover {
+    text-decoration: underline;
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+
+/* Add styles for the SVG icon */
+.movie-icon {
+    size:100px;
+    width: 50px;
+    height: 50px;
+    fill: currentColor; /* Ensures SVG inherits text color */
+    margin-right: 10px; /* Adjust spacing if needed */
+}
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Recommended Movies</h2>
+        
+        <div id="recommendations">
+            {% if recommendations %}
+                {% for movie in recommendations %}
+                    <div class="movie-container" onmouseover="showDetails('{{ movie.title }}')" onmouseout="hideDetails('{{ movie.title }}')">
+                        <div class="movie">
+                            <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }} Poster">
+                            <div class="movie-title">{{ movie.title }}</div>
+                            <div class="movie-details hidden" id="details-{{ movie.title }}">
+                                <p><strong>Title:</strong> {{ movie.title }}</p>
+                                <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+                                <p><strong>Duration:</strong> {{ movie.runtime }} mins</p>
+                                <p><strong>Rating:</strong> {{ movie.vote_average }}</p>
+                                <p><strong>Language:</strong> {{ movie.language }}</p>
+                                <p><strong>Cast:</strong> {{ movie.cast|join(', ') }}</p>
+                                <p><strong>Description:</strong> {{ movie.overview }}</p>
+                                <a class="show-more-link" href="https://www.themoviedb.org/movie/{{ movie.id }}" target="_blank">Show More</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No recommendations found.</p>
+            {% endif %}
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
